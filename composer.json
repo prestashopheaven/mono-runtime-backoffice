@@ -1,0 +1,102 @@
+{
+    "name": "prestashopheaven/mono-runtime-backoffice",
+    "description": "Back-office building blocks of PrestaHaven modules: loading the module's admin scripts on its own pages, the admin TypeScript helpers, and later the settings page, grids, messages and the product form.",
+    "version": "1.0.0",
+    "type": "project",
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../libraries/mono-build-standards/packages/*",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "prestashopheaven/build-coding-standard": "1.0.0",
+                    "prestashopheaven/build-typescript": "1.0.0"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../libraries/mono-build-tools/packages/*",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "prestashopheaven/build-tools": "1.0.0"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../libraries/mono-runtime-core/packages/*",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "prestashopheaven/runtime-cqrs": "1.0.0",
+                    "prestashopheaven/runtime-kit": "1.0.0",
+                    "prestashopheaven/runtime-multistore": "1.0.0",
+                    "prestashopheaven/runtime-shared-kernel": "1.0.0"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../libraries/mono-runtime-support/packages/*",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "prestashopheaven/runtime-clock": "1.0.0"
+                }
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../libraries/*",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "packages/*",
+            "options": {
+                "symlink": true,
+                "versions": {
+                    "prestashopheaven/runtime-admin-assets": "1.0.0"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "prestashopheaven/runtime-admin-assets": "*"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.2",
+        "phpcompatibility/php-compatibility": "^10.0@alpha",
+        "phpunit/phpunit": "^10.5",
+        "prestashopheaven/build-tools": "^1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "8.1.0"
+        },
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "prestashopheaven": {
+            "monorepo": {
+                "kind": "runtime",
+                "category": "backoffice"
+            }
+        }
+    },
+    "scripts": {
+        "check": "ps-module mono check"
+    }
+}
